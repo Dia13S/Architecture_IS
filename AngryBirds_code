@@ -1,0 +1,45 @@
+@startuml
+class Gamers
+{
+    name: string
+    level: int
+    type: int
+}
+
+class Birds
+{
+    name: string
+    number: int
+    type: int
+}
+
+
+class Slingshot
+{
+    level: double
+    power: double
+}
+
+class Pigs
+{
+    name: string
+    number: int
+    health: int
+    type: int
+
+}
+
+class Levels
+{
+    name: string
+    number: int
+    
+
+}
+Gamers --> Birds : manage
+Gamers --> Levels : achieve
+Gamers -->  Slingshot: configure
+Slingshot -> Birds : Shot 
+Birds --> Pigs : destroy
+
+@enduml
