@@ -1,0 +1,41 @@
+// Maket.cpp : Этот файл содержит функцию "main". Здесь начинается и заканчивается выполнение программы.
+//
+
+#include <iostream>
+
+class Camera
+{
+    int x, y;
+public:
+    int enterKor()
+    {
+
+    }
+};
+
+class Robot :public Camera
+{
+    int input()
+    {
+
+    }
+    int move()
+    {
+
+    }
+    int clearn()
+    {
+
+    }
+
+
+};
+
+int main()
+{
+    Camera kor;
+    kor.enterKor();
+    Robot rob;
+
+}
+
