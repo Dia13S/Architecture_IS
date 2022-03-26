@@ -1,0 +1,39 @@
+@startuml
+class camera {
+find_graffity()
+}
+
+class track{
+
+}
+class notrack{
+
+}
+class sendCor{
+
+}
+class waiting{
+
+}
+class appearRob{
+
+}
+class dirty{
+
+}
+class clean{
+
+}
+
+camera -right-> track: on()
+camera -down-> notrack: on()
+notrack -left-> track: press_on()
+track -right-> sendCor: appear_graffity()
+sendCor -down-> waiting
+waiting -down-> appearRob
+appearRob -down-> clean: cleaning()
+appearRob -down-> dirty
+clean -down-> track:return_to_place()
+dirty -down-> sendCor
+
+@enduml
