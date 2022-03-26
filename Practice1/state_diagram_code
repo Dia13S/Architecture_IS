@@ -1,39 +1,18 @@
 @startuml
-class camera {
-find_graffity()
-}
 
-class track{
+[*] --> ON: Press ON
+[*] --> OFF: Press OFF
 
-}
-class notrack{
+OFF --> Нет_отслеживания
+ON --> Отслеживание
+Нет_отслеживания --> ON: Press ON
 
-}
-class sendCor{
-
-}
-class waiting{
-
-}
-class appearRob{
-
-}
-class dirty{
-
-}
-class clean{
-
-}
-
-camera -right-> track: on()
-camera -down-> notrack: on()
-notrack -left-> track: press_on()
-track -right-> sendCor: appear_graffity()
-sendCor -down-> waiting
-waiting -down-> appearRob
-appearRob -down-> clean: cleaning()
-appearRob -down-> dirty
-clean -down-> track:return_to_place()
-dirty -down-> sendCor
+Отслеживание --> Отправление_смс_роботу: Появление граффити
+Отправление_смс_роботу --> Ожидание_робота
+Ожидание_робота --> Робот_появился
+Робот_появился --> Граффити_осталось
+Робот_появился --> Граффити_исчезло: Очищение
+Граффити_исчезло --> Отслеживание: Возвращение на место 
+Граффити_осталось --> Отправление_смс_роботу: Повторный запрос
 
 @enduml
